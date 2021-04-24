@@ -15,7 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="csc-134-project.cpp">
+    <ClCompile Include="StudentMain.cpp">
+    <ClCompile Include="ClassRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
