@@ -16,6 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StudentMain.cpp">
+    <ClCompile Include="ClassRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
