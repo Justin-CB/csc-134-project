@@ -2,10 +2,34 @@
 //
 
 #include <iostream>
+#include <string>
+#include <fstream>
 
+//ClassRoom Object
+void readFile(std::ifstream& inFile) {
+    std::string str;
+    std::string totString = "";
+    std::string firstName, lastName, SSN;
+    double eg1, eg2, eg3, eg4, avrgEG;
+    int counter = 0;
+
+    inFile.open("students.txt");
+    std::cout << std::endl;
+
+    while (inFile.good()) {
+        while (inFile >> firstName >> lastName >> SSN >> eg1 >> eg2 >> eg3 >> eg4) {
+            std::cout << "First Name : " << firstName<<std::endl;
+            std::cout << "last Name : " << lastName << std::endl;
+        }
+    }
+}
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::fstream studentsFile;
+    studentsFile.open("students.txt", std::ios::in);
+    readFile(studentsFile);
+    //Constructor will actually create the object type ClassRoom
+    
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
