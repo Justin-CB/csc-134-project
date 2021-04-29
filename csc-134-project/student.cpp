@@ -1,3 +1,17 @@
+///////////////////////////////////////////////////////////////////////
+//                                                                     
+// Filename: student.cpp
+// Date: April 29, 2021
+// Programmer: Ken Lacy             
+//
+// Description:
+//    Create the student objects from student.txt: attributes, first, last, SSN, grades, average exam and student numnber  
+//    
+//                                                                  ///////////////////////////////////////////////////////////////////////
+
+
+
+
 #include<iostream>
 #include<string>
 #include"student.h"

@@ -1,3 +1,16 @@
+///////////////////////////////////////////////////////////////////////
+//                                                                     
+// Filename: student.h
+// Date: April 29, 2021
+// Programmer: Ken Lacy             
+//
+// Description:
+//    Student attribute names and Constructors 
+//    
+//                                                                  ///////////////////////////////////////////////////////////////////////
+
+
+
 #pragma once
 #include<iostream>
 #include<string>
