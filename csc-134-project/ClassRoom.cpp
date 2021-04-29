@@ -83,6 +83,10 @@ int main()
    /* for (int i = 0; i < CSC134.numOfStudents; i++) {
         std::cout << "hello number : " << i << std::endl;
     }*/
+    ~ClassRoom()
+    {
+        /* Destructor code here */
+    }
 
 }
 
