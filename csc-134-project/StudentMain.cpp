@@ -2,11 +2,11 @@
 #include "ClassRoom.h"
 int main()
 {
-ClassRoom classroom = new ClassRoom("students.txt");
-classroom.sort_by_average();
-classroom.display_students();
-classroom.sort_by_lastname();
-classroom.display_students();
-classroom.display_average_grades();
-classroom.display_num_students();
+	ClassRoom classroom;
+	classroom.sortByAverage();
+	classroom.displaySummary();
+	classroom.sortByLN();
+	classroom.displaySummary();
+	printf("Overall average grade: %g%%\n", classroom.overallAverage());
+	printf("%d students created.\n", classroom.studentsCreatedNum());
 }
