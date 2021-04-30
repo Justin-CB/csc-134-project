@@ -5,14 +5,15 @@
 #include <string>
 #include <fstream>
 #include "ClassRoom.h"
+#include "student.h"
 
-ClassRoom::ClassRoom() 
+ClassRoom::ClassRoom()
 //default constructor.
 {
     this->objectName = "CSC134";
     //include the num of students and the array size.
 }
-ClassRoom::ClassRoom(std::string objectName, int numOfStudents) {
+ClassRoom::ClassRoom(std::string objectName, int numOfStudents, Student*& arr) {
     this->objectName = objectName;
     this->numOfStudents = numOfStudents;
     //add DA here.
@@ -27,12 +28,9 @@ void ClassRoom::readFile(std::ifstream& inFile, int& cntr) {
 
 
     inFile.open("Students.txt");
-    
-    while (inFile.is_open()) {
-        std::cout << "FUCK U ALAN" << std::endl;
-    }
+
+
     while (inFile.good()) {
-        std::cout << "FUCKKK 2.0" << std::endl;
         while (inFile >> firstName >> lastName >> SSN >> eg1 >> eg2 >> eg3 >> eg4) {
             cntr++;
             std::cout << "Num: " << cntr << ' ' << firstName << " " << lastName << " " << SSN << " " << eg1 << " " << eg2 << " " << eg3 << " " << eg4 << std::endl;
@@ -45,5 +43,10 @@ void ClassRoom::readFile(std::ifstream& inFile, int& cntr) {
 
     }
     //total of 16 students. Assign to the classroom object.
+}
+void ClassRoom::displaySummary() {
+    std::cout << "First Name \t Last Name \t SSN \t Exam Grade 1 \t Exam Grade 2 \t Exam Grade 3 \t Exam Grade 4 \t average" << std::endl;
+
+
 }
 
