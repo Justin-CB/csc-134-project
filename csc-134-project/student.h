@@ -69,6 +69,6 @@ public:
 	void setGrades(double a[4]);
 	void print();
 	void calAvg();
-
+	~Student();
 };
 

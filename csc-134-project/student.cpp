@@ -5,7 +5,7 @@
 // Programmer: Ken Lacy
 //
 // Description:
-//    Create the student objects from student.txt: attributes, first, last, SSN, grades, average exam and student numnber
+//    Create the student objects from student.txt: attributes, first, last, SSN, grades, average exam and student number
 //
 //
 ///////////////////////////////////////////////////////////////////////
@@ -37,7 +37,7 @@ Student::Student()
 	{
 		this->grades[i] = 0;
 	}
-
+	Student::num++;
 }
 ///////////////////////////////////////////////////////////////////////
 //
@@ -65,7 +65,7 @@ Student::Student(string firstName, string lastName, string SSN, double grades[4]
 	{
 		this->grades[i] = grades[i];
 	}
-
+	Student::num++;
 }
 ///////////////////////////////////////////////////////////////////////
 //
@@ -262,4 +262,20 @@ void Student::print()
 	for (int i = 0; i < 4; ++i)
 		cout << " " << grades[i];
 	cout << endl;
+}
+///////////////////////////////////////////////////////////////////////
+//
+// Function: ~Student
+//
+// Description:
+//    Destructor for the Student Class
+//
+// Parameters:
+//
+// Returns:
+//
+///////////////////////////////////////////////////////////////////////
+Student::~Student()
+{
+	Student::num--;
 }
