@@ -4,52 +4,35 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <sstream>
-#include <iomanip>
+#include "ClassRoom.h"
 
-class ClassRoom {
-public:
-    ClassRoom();
-    int numOfStudents;
-    //create the dynamic Array of STUDENT OBJECTS here (MAX SIZE IS 24)
-    //represented as an array of pointers.
+ClassRoom::ClassRoom() 
+//default constructor.
+{
+    this->objectName = "CSC134";
+    //include the num of students and the array size.
+}
+ClassRoom::ClassRoom(std::string objectName, int numOfStudents) {
+    this->objectName = objectName;
+    this->numOfStudents = numOfStudents;
+    //add DA here.
+}
 
-    //SYNTAX FOR CREATING A DYNAMIC ARRAY
-    /*
-        dataType *nameOfTheDynamicArray;
-        nameOfTheDynamicArray = new dataType[numberOfElements];
-        nameOfTheDynamicArray[0] = value;
-        delete [] nameOfTheDynamicArray;
-    */
 
-    /*
-        student classRoomDA;
-        classRoomDA = new student[24];
-        //CREATE THE FOR LOOP TO ASSIGN ALL STUDENT OBJECTS TO THE ARRAY
-
-            for(int i=0; i<numOfStudents;i++){
-
-            }
-
-        delete [] classRoomDA
-
-    */
-    // ~ClassRoom();
-};
-
-//ClassRoom Object
-void readFile(std::ifstream& inFile, int& cntr) {
+void ClassRoom::readFile(std::ifstream& inFile, int& cntr) {
     std::string str;
     std::string totString = "";
     std::string firstName, lastName, SSN;
-    double eg1, eg2, eg3, eg4, avrgEG;
+    double eg1, eg2, eg3, eg4;// , avrgEG;
 
 
-    inFile.open("students.txt");
-    std::cout << std::endl;
-
+    inFile.open("Students.txt");
+    
+    while (inFile.is_open()) {
+        std::cout << "FUCK U ALAN" << std::endl;
+    }
     while (inFile.good()) {
-
+        std::cout << "FUCKKK 2.0" << std::endl;
         while (inFile >> firstName >> lastName >> SSN >> eg1 >> eg2 >> eg3 >> eg4) {
             cntr++;
             std::cout << "Num: " << cntr << ' ' << firstName << " " << lastName << " " << SSN << " " << eg1 << " " << eg2 << " " << eg3 << " " << eg4 << std::endl;
@@ -63,33 +46,4 @@ void readFile(std::ifstream& inFile, int& cntr) {
     }
     //total of 16 students. Assign to the classroom object.
 }
-int main()
-{
-    //Variables Used
-    int counter = 0;
-    std::ifstream studentsFile;
 
-    //instant. of object
-    ClassRoom CSC134;
-
-    //asdfqsfwref
-
-    readFile(studentsFile, counter);
-
-    CSC134.numOfStudents = counter;
-    std::cout << counter << std::endl;
-    //Constructor will actually create the object type ClassRoom
-
-   /* for (int i = 0; i < CSC134.numOfStudents; i++) {
-        std::cout << "hello number : " << i << std::endl;
-    }*/
-    ~ClassRoom()
-    {
-        /* Destructor code here */
-    }
-
-}
-
-ClassRoom::ClassRoom()
-{
-}
