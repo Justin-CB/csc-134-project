@@ -1,38 +1,20 @@
-#pragma once
 #include <iostream>
 #include <string>
 #include "student.h"
 
 class ClassRoom {
+/*private:*/
 	std::string objectName;
 	int numOfStudents;
-	//dynamic array goes here.
-
+	Student * students[24];
 public:
 	ClassRoom();
-	
-	ClassRoom(std::string objectName, int numOfStudents, Student*& arr);//array goes here );
-	
-	
+	ClassRoom(std::string objectName);
 	~ClassRoom();
-
-	void readFile(std::ifstream& inFile, int& cntr, Student*& arr);
-
+	void readFile();
 	void sortByAverage();
-	// return array???
-	
-
 	void sortByLN();
-	
-
-	double overallAverage(Student*& arr, int studentsCntr);
-	
-
-	void displaySummary(Student*& arr, int counter);
-	
-
-	int studentsCreatedNum(Student*& arr);
-	
-
-
+	double overallAverage();
+	void displaySummary();
+	int studentsCreatedNum();
 };
