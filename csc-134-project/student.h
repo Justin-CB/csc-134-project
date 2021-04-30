@@ -19,7 +19,7 @@ private:
 public:
 	static int num;
 	//constructor to set all fields
-	Student();
+	Student(); asdfasd
 	Student(string firstName, string lastName, string SSN, double grades[4]);
 	string getFirst();
 	string getLast();
