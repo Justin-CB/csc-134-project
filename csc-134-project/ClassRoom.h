@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "student.h"
 
 class ClassRoom {
 	std::string objectName;
@@ -10,7 +11,7 @@ class ClassRoom {
 public:
 	ClassRoom();
 	//do I need a default constructor????
-	ClassRoom(std::string objectName, int numOfStudents);//array goes here );
+	ClassRoom(std::string objectName, int numOfStudents, Student*& arr);//array goes here );
 	//constructor fucntions.
 
 	//Destructor function goes here???
