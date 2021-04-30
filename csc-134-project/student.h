@@ -10,6 +10,7 @@
 //
 ///////////////////////////////////////////////////////////////////////
 
+#pragma once
 #include <iostream>
 #include <string>
 using namespace std;
@@ -49,9 +50,6 @@ private:
 	string lastName;
 	string SSN;
 	double grades[4];
-	double avg;
-
-
 public:
 	static int num;
 	//constructor to set all fields
@@ -67,7 +65,6 @@ public:
 	void setSSN(string arg);
 	void setGrades(double a[4]);
 	void print();
-	void calAvg();
 	~Student();
 };
 

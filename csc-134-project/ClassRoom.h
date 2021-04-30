@@ -6,15 +6,15 @@ class ClassRoom {
 /*private:*/
 	std::string objectName;
 	int numOfStudents;
-	Student * students;
+	Student * students[24];
 public:
 	ClassRoom();
 	ClassRoom(std::string objectName);
 	~ClassRoom();
-	void readFile(std::ifstream& inFile, int& cntr, Student*& arr);
+	void readFile();
 	void sortByAverage();
 	void sortByLN();
-	double overallAverage(Student*& arr, int studentsCntr);
-	void displaySummary(Student*& arr, int counter);
-	int studentsCreatedNum(Student*& arr);
+	double overallAverage();
+	void displaySummary();
+	int studentsCreatedNum();
 };

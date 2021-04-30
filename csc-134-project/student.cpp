@@ -140,17 +140,22 @@ double* Student::getGrades()
 // Function: getAvg
 //
 // Description:
-//    Getter for the avg variable
+//    Calculates the student's average test grades
 //
 // Parameters:
 //
 // Returns:
-//    avg : The student's average test grades(calculated by the calAvg function
+//    avg : The student's average test grades
 //
 ///////////////////////////////////////////////////////////////////////
 double Student::getAvg()
 {
-	return avg;
+	double sum = 0;
+	for (int i = 0; i < 4; ++i)
+	{
+		sum += grades[i];
+	}
+	return sum / 4;
 }
 ///////////////////////////////////////////////////////////////////////
 //
@@ -222,27 +227,6 @@ void Student::setGrades(double a[4])
 	{
 		grades[i] = a[i];
 	}
-}
-///////////////////////////////////////////////////////////////////////
-//
-// Function: setGrades
-//
-// Description:
-//    Calulates the average of the student's test grades & puts it in the avg variable
-//
-// Parameters:
-//
-// Returns:
-//
-///////////////////////////////////////////////////////////////////////
-void Student::calAvg()
-{
-	double sum = 0;
-	for (int i = 0; i < 4; ++i)
-	{
-		sum += grades[i];
-	}
-	avg = sum / 4;
 }
 ///////////////////////////////////////////////////////////////////////
 //
