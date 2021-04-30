@@ -1,4 +1,7 @@
 /* This is preliminary, will need to be changed based on the actual function names */
+#include "ClassRoom.h"
+int main()
+{
 ClassRoom classroom = new ClassRoom("students.txt");
 classroom.sort_by_average();
 classroom.display_students();

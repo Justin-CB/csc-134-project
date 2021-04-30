@@ -11,7 +11,7 @@ class ClassRoom {
 public:
 	ClassRoom();
 	
-	ClassRoom(std::string objectName, int numOfStudents, Student*& arr);//array goes here );
+	ClassRoom(std::string objectName);
 	
 	
 	~ClassRoom();

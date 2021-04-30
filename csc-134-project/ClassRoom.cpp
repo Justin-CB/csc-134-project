@@ -9,11 +9,13 @@ ClassRoom::ClassRoom()
 //default constructor.
 {
     this->objectName = "CSC134";
-    //include the num of students and the array size.
+    this->numOfStudents = 0; /* You start with 0 students */
+
 }
-ClassRoom::ClassRoom(std::string objectName, int numOfStudents, Student*& arr) {
+ClassRoom::ClassRoom(std::string objectName)
+{
     this->objectName = objectName;
-    this->numOfStudents = numOfStudents;
+    this->numOfStudents = 0; /* You start with 0 students */
     //add DA here.
 }
 ClassRoom::~ClassRoom()
