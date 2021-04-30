@@ -10,31 +10,29 @@ class ClassRoom {
 
 public:
 	ClassRoom();
-	//do I need a default constructor????
+	
 	ClassRoom(std::string objectName, int numOfStudents, Student*& arr);//array goes here );
-	//constructor fucntions.
+	
+	
+	~ClassRoom();
 
-	//Destructor function goes here???
-
-	void readFile(std::ifstream& inFile, int& cntr);
+	void readFile(std::ifstream& inFile, int& cntr, Student*& arr);
 
 	void sortByAverage();
-	// void?? probably return an array?
-	// pass by reference?
-	// dynamic array as parameter.
+	// return array???
+	
 
 	void sortByLN();
-	//same things as sortByAverage.
+	
 
-	double overallAverage();
-	//return the average of all students
-	// dynamic array as a parameter.
+	double overallAverage(Student*& arr, int studentsCntr);
+	
 
-	void displaySummary();
-	//paramter = dynamic array.
+	void displaySummary(Student*& arr, int counter);
+	
 
-	int studentsCreatedNum();
-	//return the number of students created DA as parameter.
+	int studentsCreatedNum(Student*& arr);
+	
 
 
 };
