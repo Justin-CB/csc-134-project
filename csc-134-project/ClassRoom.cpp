@@ -1,10 +1,22 @@
+///////////////////////////////////////////////////////////////////////
+//                                                                     
+// Filename: ClassRoom.cpp
+// Date: April 30, 2021
+// Programmer: Alan Monzon
+//
+// Description:
+//    This is the cpp file for the ClassRoom class, its purpose is to
+//		create/define the functions listed int eh ClassRoom.h file.
+//    how it does what it is meant to do.
+///////////////////////////////////////////////////////////////////////
+
 #include <iostream>
 #include <string>
 #include <fstream>
 #include "ClassRoom.h"
 #include "student.h"
 #include <algorithm>
-#include <array>
+
 
 
 ClassRoom::ClassRoom()
@@ -42,9 +54,7 @@ void ClassRoom::readFile()
 void ClassRoom::sortByAverage()
 {
 	int minInd;
-	double temp;
-	int indexStorer = 0;
-	temp = students[0]->getAvg();
+
 	for (int i = 0; i < numOfStudents; i++) {
 		minInd = i;
 		for (int j = i + 1; j < numOfStudents; j++)
@@ -61,7 +71,19 @@ void ClassRoom::sortByAverage()
 
 void ClassRoom::sortByLN()
 {
-
+	std::string minValue;
+	int minInd;
+	for (int i = 0; i < numOfStudents; i++) {
+		minInd = i;
+		minValue = students[i]->getLast();
+		for (int j = i + 1; j < numOfStudents; j++) {
+			if (students[j]->getLast() < minValue) {
+				minValue = students[j]->getLast();
+				minInd = j;
+			}
+		}
+		std::swap(students[minInd], students[i]);
+	}
 }
 ///////////////////////////////////////////////////////////////////////
 //
