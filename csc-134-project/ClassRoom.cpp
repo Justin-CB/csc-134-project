@@ -3,6 +3,8 @@
 #include <fstream>
 #include "ClassRoom.h"
 #include "student.h"
+#include <algorithm>
+#include <array>
 
 
 ClassRoom::ClassRoom()
@@ -36,6 +38,30 @@ void ClassRoom::readFile()
 		students[numOfStudents] = new Student(firstName, lastName, SSN, grades);
 		numOfStudents++;
 	}
+}
+void ClassRoom::sortByAverage()
+{
+	int minInd;
+	double temp;
+	int indexStorer = 0;
+	temp = students[0]->getAvg();
+	for (int i = 0; i < numOfStudents; i++) {
+		minInd = i;
+		for (int j = i + 1; j < numOfStudents; j++)
+			if (students[j]->getAvg() < students[minInd]->getAvg())
+				minInd = j;
+		std::swap(students[minInd], students[i]);
+
+
+	}
+
+
+
+}
+
+void ClassRoom::sortByLN()
+{
+
 }
 ///////////////////////////////////////////////////////////////////////
 //
