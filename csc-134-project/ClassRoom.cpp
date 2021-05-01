@@ -19,17 +19,67 @@
 
 
 
+///////////////////////////////////////////////////////////////////////
+//
+// Constructor: ClassRoom()                                          
+//                                                                   
+// Description:
+//    Basic consturctor for a parameterless ClassRoom
+//		starts off with objectName as "CSC134" and a 
+//		  numOfStudents with a value of 0.
+//
+// Parameters:  
+//    None      
+//                                                       
+// Returns:  
+//    None
+//                                     
+///////////////////////////////////////////////////////////////////////
+
 ClassRoom::ClassRoom()
 //default constructor.
 {
 	this->objectName = "CSC134";
 	this->numOfStudents = 0; /* You start with 0 students */
 }
+
+///////////////////////////////////////////////////////////////////////
+//
+// Constructor: ClassRoom(std::string objectName)                                          
+//                                                                   
+// Description:
+//    Same as the parameterless constructor but you can 
+//		change the object name.
+//
+// Parameters:  
+//    firstParam  : (String) assigns a name to the ClassRoom object
+//                                                       
+// Returns:  
+//		None.                                           
+// 
+///////////////////////////////////////////////////////////////////////
+
 ClassRoom::ClassRoom(std::string objectName)
 {
 	this->objectName = objectName;
 	this->numOfStudents = 0; /* You start with 0 students */
 }
+
+///////////////////////////////////////////////////////////////////////
+//
+// Destructor: ~ClassRoom                                        
+//                                                                   
+// Description:
+//    Destructor function for the ClassRoom class.
+//		destorys the dynamic array
+//
+// Parameters:  
+//    None.         
+//                                                       
+// Returns:  
+//    None.
+//                                            
+///////////////////////////////////////////////////////////////////////
 ClassRoom::~ClassRoom()
 {
 	int i;
@@ -38,6 +88,22 @@ ClassRoom::~ClassRoom()
 		delete students[i];
 	}
 }
+
+///////////////////////////////////////////////////////////////////////
+//
+// Function: readFile                                          
+//                                                                   
+// Description:
+//    Opens the "Students.txt" file and creates student objects with
+//		the needed attributes to populate the students dynamic array.
+//
+// Parameters:  
+//    None.
+//                                                       
+// Returns:  
+//    None.
+//                                            
+///////////////////////////////////////////////////////////////////////
 
 void ClassRoom::readFile()
 {
@@ -51,6 +117,22 @@ void ClassRoom::readFile()
 		numOfStudents++;
 	}
 }
+///////////////////////////////////////////////////////////////////////
+//
+// Function: sortByAverage();                         
+//                                                                   
+// Description:
+//    Sorts the students dynamic array in ascending order based off of 
+//		the exam average calculated.
+//
+// Parameters:  
+//    None.
+//                                                       
+// Returns:  
+//    None.
+//                                            
+///////////////////////////////////////////////////////////////////////
+
 void ClassRoom::sortByAverage()
 {
 	int minInd;
@@ -62,13 +144,23 @@ void ClassRoom::sortByAverage()
 				minInd = j;
 		std::swap(students[minInd], students[i]);
 
-
 	}
-
-
-
 }
-
+///////////////////////////////////////////////////////////////////////
+//
+// Function: readFile                                          
+//                                                                   
+// Description:
+//    Opens the "Students.txt" file and creates student objects with
+//		the needed attributes to populate the students dynamic array.
+//
+// Parameters:  
+//    None.
+//                                                       
+// Returns:  
+//    None.
+//                                            
+///////////////////////////////////////////////////////////////////////
 void ClassRoom::sortByLN()
 {
 	std::string minValue;
@@ -116,8 +208,8 @@ std::string spaces(int num)
 // Function: spaceDiff
 //
 // Description:
-//	gets the length of the previous string and determines how many spaces are needed
-//	 to be used with the spaces function.
+//	Uses a ternary operater to help calculated the correct number of spaces
+//	  needed based off of the lenght of the string it needs to align with.
 //
 // Parameters:
 //	numHolder  : the number of spaces in the string "item"
@@ -133,6 +225,21 @@ int spaceDiff(int numHolder, std::string item)
 	 * They don't need to be in parentheses, but it's easier to understand */
 	return (item.length() < numHolder) ? (numHolder - item.length()) : (0);
 }
+///////////////////////////////////////////////////////////////////////
+//
+// Function: overallAverage
+//                                                                   
+// Description:
+//    calculates the average exam grade for all students and all exams.
+//		it averages the average exam grade for each individual student.
+//
+// Parameters:  
+//    None.
+//                                                       
+// Returns:  
+//    (double) totAverage which holds the average of all exams grades.
+//                                            
+///////////////////////////////////////////////////////////////////////
 double ClassRoom::overallAverage()
 {
 	double totAverage = 0.0;
@@ -143,7 +250,21 @@ double ClassRoom::overallAverage()
 	totAverage = totAverage / numOfStudents;
 	return totAverage;
 }
-
+///////////////////////////////////////////////////////////////////////
+//
+// Function: displaySummary                      
+//                                                                   
+// Description:
+//    Displays every student and all of their respective attributes.
+//		Also displays every student's respective exam average.
+//
+// Parameters:  
+//    None.
+//                                                       
+// Returns:  
+//    None.
+//                                            
+///////////////////////////////////////////////////////////////////////
 void ClassRoom::displaySummary()
 {
 
@@ -155,7 +276,22 @@ void ClassRoom::displaySummary()
 
 
 }
-
+///////////////////////////////////////////////////////////////////////
+//
+// Function: studentsCreatedNum 
+//                                                                   
+// Description:
+//    Returns the total number of students created.
+//		Basically it will serve as the length of the array.
+//
+// Parameters:  
+//    None.
+//                                                       
+// Returns:  
+//    (int) total number of student objects inside of the 
+//		students dynamic array.
+//                                            
+///////////////////////////////////////////////////////////////////////
 int ClassRoom::studentsCreatedNum()
 {
 	return numOfStudents;
