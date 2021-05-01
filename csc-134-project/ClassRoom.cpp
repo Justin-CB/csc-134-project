@@ -41,27 +41,18 @@ void ClassRoom::readFile()
 }
 void ClassRoom::sortByAverage()
 {
-	int minInd;
-	double temp;
-	int indexStorer = 0;
-	temp = students[0]->getAvg();
-	for (int i = 0; i < numOfStudents; i++) {
-		minInd = i;
-		for (int j = i + 1; j < numOfStudents; j++)
-			if (students[j]->getAvg() < students[minInd]->getAvg())
-				minInd = j;
-		std::swap(students[minInd], students[i]);
-
-
-	}
-
-
-
+	sort(students[0], students[numOfStudents], avg_less);
 }
-
+bool ClassRoom::avg_less(Student a, Student b)
+{
+	return a.getAvg() < b.getAvg();
 void ClassRoom::sortByLN()
 {
-
+	sort(students[0], students[numOfStudents], LN_less);
+}
+bool ClassRoom::LN_less(Student a, Student b)
+{
+	return (a.getLast().compare(b.getLast())) < 0;
 }
 ///////////////////////////////////////////////////////////////////////
 //

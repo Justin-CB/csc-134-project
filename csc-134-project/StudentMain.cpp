@@ -3,6 +3,7 @@
 int main()
 {
 	ClassRoom classroom;
+	classroom.readFile();
 	classroom.sortByAverage();
 	classroom.displaySummary();
 	classroom.sortByLN();

@@ -17,4 +17,6 @@ public:
 	double overallAverage();
 	void displaySummary();
 	int studentsCreatedNum();
+	static bool LN_less(Student a, Student b);
+	static bool avg_less(Student a, Student b);
 };
